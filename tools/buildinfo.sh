@@ -57,6 +57,6 @@ fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
 # Omni properties
-echo "ro.axxion.device=$OMNI_DEVICE"
+echo "ro.axxion.device=$AXXION_DEVICE"
 
 echo "# end build properties"
