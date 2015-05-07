@@ -23,16 +23,24 @@ PRODUCT_PACKAGES := \
     libfwdlockengine \
     WAPPushManager
 
-PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
-    VisualizationWallpapers \
-    PhotoTable
+ifneq ($(TARGET_LOW_RAM_DEVICE), true)
+    ifneq ($(TARGET_EXCLUDE_LIVEWALLPAPERS), true)
+        PRODUCT_PACKAGES += \
+            Galaxy4 \
+            HoloSpiralWallpaper \
+            LiveWallpapers \
+            LiveWallpapersPicker \
+            MagicSmokeWallpapers \
+            NoiseField \
+            PhaseBeam \
+            VisualizationWallpapers \
+            PhotoTable
+    else
+        PRODUCT_PACKAGES += \
+            LiveWallpapersPicker \
+            PhotoTable
+    endif
+endif
 
 # Additional settings used in all AOSP builds
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -45,7 +53,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_LOCALES := en_US
 
 # Include drawables for all densities
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
+PRODUCT_AAPT_CONFIG := normal
 
 # Get some sounds
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
