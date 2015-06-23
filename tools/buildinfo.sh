@@ -56,7 +56,7 @@ if [ "$TARGET_UNIFIED_DEVICE" == "" ] ; then
 fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
-# Omni properties
+# Axxion properties
 echo "ro.axxion.device=$AXXION_DEVICE"
 
 echo "# end build properties"
