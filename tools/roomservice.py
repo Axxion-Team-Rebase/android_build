@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-# Copyright (C) 2013 Cybojenix <anthonydking@gmail.com>
-# Copyright (C) 2013 The OmniROM Project
+# The Axxion Project
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
