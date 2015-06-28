@@ -588,17 +588,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   if OPTIONS.wipe_user_data:
     script.Print("Formatting /data")
     script.FormatPartition("/data", OPTIONS.mount_by_label)
+                                             
+script.Print("_______                 _____                 ");
+script.Print("___    |____  ______  _____(_)______ _______  ");
+script.Print("__  /| |__  |/_/__  |/_/__  / _  __ \__  __ \ ");
+script.Print("_  ___ |__>  <  __>  <  _  /  / /_/ /_  / / / ");
+script.Print("/_/  |_|/_/|_|  /_/|_|  /_/   \____/ /_/ /_/  ";);
 
-  script.Print("#######################################");
-  script.Print("# _____            __  __  ______     #");
-  script.Print("#/\  __`\  /'\_/`\/\ \/\ \/\__  _\    #");
-  script.Print("#\ \ \/\ \/\  ``  \ \ ` \ \/_/\ \/    #");
-  script.Print("# \ \ \ \ \ \ \__\ \ \ . ` \ \ \ \    #");
-  script.Print("#  \ \ \_\ \ \ \_/\ \ \ \`\ \ \_\ \__ #");
-  script.Print("#   \ \_____\ \_\, \_\ \_\ \_\/\_____\#");
-  script.Print("#    \/_____/\/_/ \/_/\/_/\/_/\/_____/#");
-  script.Print("#                                     #");
-  script.Print("#######################################");
 
   system_progress = 0.75
 
@@ -625,6 +621,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     system_diff = common.BlockDifference("system", system_tgt, src=None)
     system_diff.WriteScript(script, output_zip)
   else:
+    script.Print("Starting device axxionization...")
     script.Print("Formatting /system")
     script.FormatPartition("/system")
     if not OPTIONS.mount_by_label:
@@ -632,7 +629,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 #    if not has_recovery_patch:
 #      script.UnpackPackageDir("recovery", "/system")
 
-    script.Print("Extracting /system")
+    script.Print("Axxionizating /system")
     script.UnpackPackageDir("system", "/system")
 
     symlinks = CopyPartitionFiles(system_items, input_zip, output_zip)
@@ -686,7 +683,8 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.WriteRawImage(bootpartition, "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("Enjoy AXXION ROM!");
+  script.Print("Axxionization completed, enjoy the revolution!");
+  script.Print("Don't get quiet, #StayInAxxion");
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
