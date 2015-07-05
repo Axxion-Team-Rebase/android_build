@@ -589,13 +589,12 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Print("Formatting /data")
     script.FormatPartition("/data", OPTIONS.mount_by_label)
                                              
-script.Print("_______                 _____                 ");
-script.Print("___    |____  ______  _____(_)______ _______  ");
-script.Print("__  /| |__  |/_/__  |/_/__  / _  __ \__  __ \ ");
-script.Print("_  ___ |__>  <  __>  <  _  /  / /_/ /_  / / / ");
-script.Print("/_/  |_|/_/|_|  /_/|_|  /_/   \____/ /_/ /_/  ";);
-
-
+  script.Print("_______                 _____                 ");
+  script.Print("___    |____  ______  _____(_)______ _______  ");
+  script.Print("__  /| |__  |/_/__  |/_/__  / _  __ \__  __ \ ");
+  script.Print("_  ___ |__>  <  __>  <  _  /  / /_/ /_  / / / ");
+  script.Print("/_/  |_|/_/|_|  /_/|_|  /_/   \____/ /_/ /_/  ");
+  
   system_progress = 0.75
 
   if OPTIONS.wipe_user_data:
